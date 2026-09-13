@@ -1,9 +1,10 @@
+"""Run from the repository root after: python download.py tissuenet_model_0019999.pth"""
+
 from sahi.utils.detectron2 import Detectron2TestConstants
 
 # import required functions, classes
 from sahi import AutoDetectionModel
 from sahi_predict import get_sliced_prediction, predict, get_prediction
-from sahi.utils.file import download_from_url
 from sahi.utils.cv import read_image
 from cellotype.predict import Detectron2DetectionModel
 import numpy as np
@@ -27,8 +28,8 @@ def get_mask_from_result(result):
 
 
 detection_model = Detectron2DetectionModel(
-    model_path='cellotype/models/tissuenet_model_0019999.pth',
-    config_path='cellotype/configs/maskdino_R50_bs16_50ep_4s_dowsample1_2048.yaml',
+    model_path='models/tissuenet_model_0019999.pth',
+    config_path='configs/maskdino_R50_bs16_50ep_4s_dowsample1_2048.yaml',
     confidence_threshold=0.4,
     image_size=512,
     device="cuda:0", # or 'cuda:0'
@@ -65,5 +66,4 @@ fig = plt.figure(figsize=(30,10))
 ax = fig.add_subplot(111)
 ax.imshow(make_outline_overlay(rgb_image, predictions=np.reshape(output, (1, output.shape[0], output.shape[1], 1)))[0])
 plt.savefig('figures/example_large.png', dpi=600)
-
 

@@ -1,8 +1,11 @@
 Quickstart
 ------------------------------
 
-Clone the repository and download the pre-trained models:
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Clone the repository and download the checkpoint
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This example uses the TissueNet checkpoint from Zenodo. See :doc:`downloads`
+for all resources, command-line alternatives, Python downloads, and licenses.
 
 .. code-block:: bash
 
@@ -11,9 +14,18 @@ Clone the repository and download the pre-trained models:
 
 .. code-block:: bash
 
-    cd models
-    sh download.sh
-    cd ..
+    python download.py tissuenet_model_0019999.pth
+
+This saves the verified checkpoint to ``models/``. The example image is already
+included under ``data/example/``, so no dataset ZIP is needed. You can also
+download the checkpoint from Python, running in the repository root:
+
+.. code-block:: python
+
+    from download import download_asset
+    model_path = download_asset("tissuenet_model_0019999.pth", output_root=".")
+
+The existing ``sh models/download.sh`` command also downloads this default checkpoint.
 
 Prepare the input images
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -25,7 +37,7 @@ Convert the input images into an RGB format where the blue channel represents th
     :alt: drawing
 
 Inference the cell segmentation
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 

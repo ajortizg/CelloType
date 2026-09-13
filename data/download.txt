@@ -3,10 +3,16 @@ CelloType example data: https://doi.org/10.5281/zenodo.22736357
 From the repository root, run:
   python download.py --list
   python download.py example_tissuenet.zip
+  python -m zipfile -e data/example_tissuenet.zip data
   python download.py example_codex_crc.zip
+  python -m zipfile -e data/example_codex_crc.zip data
   python download.py example_xenium.zip
+  python -m zipfile -e data/example_xenium.zip data
 
 Files are saved under data/. Extract the required ZIP and follow its tutorial.
+Rerun the same download command to resume an interrupted transfer.
+For Python functions, direct links, curl/wget, and matching checkpoints, see:
+https://cellotype.readthedocs.io/en/latest/downloads.html
 Licenses and attribution:
 https://zenodo.org/records/22736357/files/LICENSES_AND_ATTRIBUTION.txt
 TissueNet example data are for non-commercial academic use under their original license.

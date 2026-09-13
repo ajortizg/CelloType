@@ -1,5 +1,20 @@
 # Example for preprocessing
 
+For the ready-to-use processed example datasets, use the
+[Zenodo downloads](https://cellotype.readthedocs.io/en/latest/downloads.html).
+From the repository root, choose a dataset and extract it:
+
+```bash
+python download.py example_xenium.zip
+python -m zipfile -e data/example_xenium.zip data
+```
+
+Replace the filename with `example_tissuenet.zip` or `example_codex_crc.zip`
+for the other examples. The [data guide](../data/README.md) includes Python
+downloads and extraction. The source links below are for obtaining original
+raw data when running preprocessing yourself; the Zenodo ZIPs contain the
+processed demonstration data. Keep the original datasets' licenses and citations.
+
 ## TissueNet Dataset
 Raw data can be downloaded from [TissueNet](https://datasets.deepcell.org/). 
 

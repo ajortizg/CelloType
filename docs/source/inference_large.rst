@@ -1,5 +1,18 @@
 Sliced inference for Cell Segmentation (Large Images)
-------------------------------
+-------------------------------------------------------
+
+Download the checkpoint
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Run from the cloned repository root. The sample image is already included in
+GitHub; only the TissueNet checkpoint is needed for this example:
+
+.. code-block:: bash
+
+    python download.py tissuenet_model_0019999.pth
+
+See :doc:`downloads` for the Python function, all model and dataset links,
+checksums, and file-specific licenses.
 
 Process the input image
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -11,7 +24,7 @@ Convert the input images into an RGB format where the blue channel represents th
 
 
 Inference the sliced prediction based on SAHI library
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Import required libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -22,7 +35,6 @@ Import required libraries
     # import required functions, classes
     from sahi import AutoDetectionModel
     from sahi_predict import get_sliced_prediction, predict, get_prediction
-    from sahi.utils.file import download_from_url
     from sahi.utils.cv import read_image
     from cellotype.predict import Detectron2DetectionModel
     import numpy as np
@@ -49,8 +61,8 @@ Run sliced inference
 .. code-block:: python
 
     detection_model = Detectron2DetectionModel(
-    model_path='cellotype/models/tissuenet_model_0019999.pth',
-    config_path='cellotype/configs/maskdino_R50_bs16_50ep_4s_dowsample1_2048.yaml',
+    model_path='models/tissuenet_model_0019999.pth',
+    config_path='configs/maskdino_R50_bs16_50ep_4s_dowsample1_2048.yaml',
     confidence_threshold=0.4,
     image_size=512,
     device="cuda:0", # or 'cuda:0'
