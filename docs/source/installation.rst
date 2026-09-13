@@ -1,6 +1,10 @@
 Installation
 ------------------------------
 
+To download model weights or example datasets, see :doc:`downloads`. The
+standalone downloader needs only Python 3.8 or later. The dependencies below
+are needed for running CelloType inference and training.
+
 First, install dependencies
 
 * Linux with Python = 3.8.*

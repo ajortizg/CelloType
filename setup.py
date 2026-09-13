@@ -39,7 +39,6 @@ setup(
         'scikit-image',
         'opencv-python',
         'pycocotools',
-        'gdown',
         'sahi==0.11.16',
         'torch==1.9.0',
         'torchvision==0.10.0',
