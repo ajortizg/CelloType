@@ -9,6 +9,7 @@ CelloType is an end-to-end Transformer-based method for automated cell/nucleus s
 
    installation
    quickstart
+   downloads
 
 .. toctree::
    :maxdepth: 1
