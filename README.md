@@ -44,6 +44,33 @@ sh ./make.sh
 pip install cellotype
 ```
 
+## Model weights and example datasets
+
+The pretrained weights and processed example datasets are archived on
+[Zenodo (version 1.0.0)](https://doi.org/10.5281/zenodo.22736357).
+Files have stable version-specific links and SHA-256 checksums. Run the following
+commands from the cloned repository root.
+
+```bash
+# List available files without downloading
+python download.py --list
+
+# Download the TissueNet checkpoint (default; about 2.68 GB)
+python download.py
+
+# Download one example dataset; rerun to resume an interrupted transfer
+python download.py example_xenium.zip
+```
+
+The downloader uses Python's standard library, verifies SHA-256 checksums, and
+places checkpoints in `models/` and dataset archives in `data/`. Use `--all` to
+download all eight assets (19.14 GB), then extract the datasets as described in
+the tutorials.
+
+Read the [file-specific licenses and attribution](https://zenodo.org/records/22736357/files/LICENSES_AND_ATTRIBUTION.txt).
+The TissueNet example data retain their noncommercial academic-use license;
+CRC/Xenium example data use CC BY 4.0, and checkpoints use Apache 2.0.
+
 # Quick started
 
 Clone the repository:
