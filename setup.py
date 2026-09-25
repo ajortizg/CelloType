@@ -28,7 +28,7 @@ setup(
     #     "Code": "https://github.com/changyubiao/useful_decoration",
     # },
 
-    python_requires='==3.8.*',
+    python_requires='==3.12.*',
     install_requires=[
         'cython',
         'scipy',
@@ -39,16 +39,13 @@ setup(
         'scikit-image',
         'opencv-python',
         'pycocotools',
-        'sahi==0.11.16',
-        'torch==1.9.0',
-        'torchvision==0.10.0',
-        'cudatoolkit==11.1',
+        'sahi',
     ],
     classifiers=[
         'Intended Audience :: Developers',
         'Intended Audience :: Science/Research',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.12',
         'Topic :: Scientific/Engineering',
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
